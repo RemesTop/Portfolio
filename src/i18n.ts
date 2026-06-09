@@ -37,7 +37,7 @@ export const translations = {
 		],
 		experience: [
 			{
-				date: 'Tammi 2026 \u2013 nykyinen',
+				date: 'Tammi 2026 \u2013 nykyhetki',
 				title: 'Järjestelmäylläpitäjä',
 				company: 'Serveri ry',
 				description: 'Ylläpidän ja kehitän opiskelijajärjestön verkkosivustoa, pilvipalveluja ja muita IT-järjestelmiä. Johdan vapaaehtoisista koostuvaa järjestelmätiimiä ja annan IT-tukea.',
@@ -46,10 +46,10 @@ export const translations = {
 				date: 'Elo 2025 \u2013 Joulu 2025',
 				title: 'Full Stack -kehittäjä',
 				company: 'Serveri ry',
-				description: 'Vapaaehtoiskehittäjänä rakensin Linux-pohjaisen palvelininfrastruktuurin alusta asti, kehitin verkkosivuston ominaisuuksia Vue.js/TypeScript-teknologioilla ja pystytin CI/CD-putket.',
+				description: 'Vapaaehtoiskehittäjänä rakensin Linux-pohjaisen palvelininfrastruktuurin alusta asti, kehitin verkkosivuston ominaisuuksia Vue.js/TypeScript-teknologioilla ja pystytin CI/CD-putkia',
 			},
 			{
-				date: 'Elo 2022 \u2013 Heinä 2022',
+				date: 'Touko 2022 \u2013 Heinä 2022',
 				title: 'Telemarkkinoija',
 				company: 'M&J Dynastia Oy',
 				description: 'Paljon asiakaspuheluita ja myyntityötä päivittäin. Ei teknologia-alaa, mutta opetti viestintää ja ihmisten kanssa toimimista.',
@@ -58,27 +58,27 @@ export const translations = {
 		projects: {
 			uiresearch: {
 				title: 'UI Research App',
-				description: 'Next.js-verkkosovellus monivaiheisiin käyttöliittymätutkimuksiin. Rakensin räätälöidyn A/B-testauksen tilanhallinnan ja monikielisyyden React Contextilla. Toteutin uudelleenkäytettäviä tiedonkeruukomponentteja ja integrooin LLM-prompteja sekä agenttityönkulkuja.',
+				description: 'Maisterikurssilla tiimiprojektina tuotettu Next.js-verkkosovellus monivaiheisiin käyttöliittymätutkimuksiin. Sisältää A/B-testauksen tilanhallinnan ja monikielisyyden. Optimoitu mobiilille ja pöytäkoneille. Vastuualueenani oli UI/UX-suunnittelu ja tekninen toteutus.',
 			},
 			spaceio: {
 				title: 'Space Io',
-				description: 'Reaaliaikainen moninpeli Node.js-auktoriteettipalvelimella (30 Hz tick rate) ja Phaser 3 -asiakassovelluksella. TypeScript-monorepositorio, Socket.IO-verkkoliikenne, asiakaspään ennustus. Johdin suunnittelua ja kehitystä neljän hengen tiimissä.',
+				description: 'Reaaliaikainen moninpeli Node.js-pohjaisella palvelimella ja Phaser 3 -pelimoottorilla. TypeScript-monorepositorio, Socket.IO-verkkoliikenne, client-side prediction. Johdin suunnittelua ja kehitystä neljän hengen tiimissä.',
 			},
 			lunch: {
 				title: 'Kampuksen Lounasnäyttö',
-				description: 'Vue.js-sovellus, joka näyttää reaaliaikaisia lounaslistoja opiskelijoille. Käytössä useilla Raspberry Pi -laitteilla kampuksella. Ylläpidin taustatietokantaa ja lisäsin SQLite-tuen data-analyysiin.',
+				description: 'Vue.js-sovellus, joka näyttää reaaliaikaisia lounaslistoja opiskelijoille. Käytössä useilla Raspberry Pi -laitteilla kampuksella. Hakee ruokalistat automaattisesti ravintolojen API-rajapinnoista ja sivujen html-rakenteista parsimalla. Kerää dataa ruokavaihtoehdoista',
 			},
 			recipe: {
 				title: 'Reseptisovellus',
-				description: 'Tiimiprojekti, jossa kirjautuminen, CRUD-toiminnot, hakutoiminto ja arvostelut.',
+				description: 'Yliopiston ohjelmistotuotannon kurssiprojekti. Ruokareseptisovellus joka sisältää kirjautumisen, CRUD-toiminnot, hakutoiminto ja arvostelut. Opin hyödyntämään pilvipohjaista sisällönhallintaa tehokkaasti web-kehityksessä.',
 			},
 			homelab: {
 				title: 'Kotipalvelin',
-				description: 'Itse rakennettu Linux-palvelin, laitteisto ja ohjelmisto. Automaattinen käyttöönotto Ansiblella, verkon ja tietoturvan konfigurointi. Ylläpidin yhteisön pelipalvelinta noin 20 aktiiviselle käyttäjälle.',
+				description: 'Itse rakennettu Linux-palvelin, laitteisto ja ohjelmisto. Opin mm. automaattisen käyttöönoton Ansiblella, verkon ja tietoturvan konfiguroinnin. Ylläpidin pelipalvelinta opiskelijayhteisölle, jossa oli noin 20 aktiivista käyttäjää.',
 			},
 			portfolio: {
 				title: 'Web-portfolio',
-				description: 'Tämä sivusto! Rakennettu Astrolla ja Tailwind CSS:llä. Kaksikielinen, responsiivinen bento-ruudukko.',
+				description: 'Tämä sivusto! Rakennettu Astrolla ja Tailwind CSS:llä.',
 			},
 		},
 		techCategories: {
@@ -114,7 +114,7 @@ export const translations = {
 				degree: 'Bachelor of Science in Computer Science',
 				school: 'University of Eastern Finland',
 				date: '2021 \u2013 2026',
-				note: 'Minors: Business Studies and Green ICT\nBachelor\'s Thesis: Generative AI in Video Games (Grade 4/5)',
+				note: '- Minors: Business Studies and Green ICT\n- Bachelor\'s Thesis: Generative AI in Video Games (Grade 4/5)\n- Active in student organization and university choir',
 			},
 			{
 				degree: 'Matriculation Examination',
@@ -128,16 +128,16 @@ export const translations = {
 				date: 'Jan 2026 \u2013 present',
 				title: 'System Administrator',
 				company: 'Serveri ry',
-				description: 'Maintain and develop the student organization website (serveriry.fi), cloud services, and other IT systems. Lead the volunteer system committee.',
+				description: 'Maintain and develop the student organization website, cloud services, and other IT systems. Lead the volunteer system committee and provide IT support.',
 			},
 			{
 				date: 'Aug 2025 \u2013 Dec 2025',
 				title: 'Full Stack Developer',
 				company: 'Serveri ry',
-				description: 'Built Linux-based server infrastructure from scratch, developed features for the website with Vue.js/TypeScript, and set up CI/CD pipelines.',
+				description: 'As a volunteer developer, I built a Linux-based server infrastructure from scratch, developed website features using Vue.js/TypeScript technologies, and set up CI/CD pipelines.',
 			},
 			{
-				date: 'Aug 2022 \u2013 Jul 2022',
+				date: 'May 2022 \u2013 Jul 2022',
 				title: 'Telemarketer',
 				company: 'M&J Dynastia Oy',
 				description: 'Lots of customer calls and sales work every day. Not tech-related, but it taught me communication and working with people.',
@@ -146,27 +146,27 @@ export const translations = {
 		projects: {
 			uiresearch: {
 				title: 'UI Research App',
-				description: 'Next.js web application for multi-stage user interface studies. Engineered custom A/B testing state management and i18n using React Context. Built reusable data collection components and integrated LLM prompts and agent workflows.',
+				description: 'A Next.js web application produced as a team project for a Master\'s course for multi-stage user interface studies. Includes A/B testing state management and multilingualism. Optimized for mobile and desktop. My responsibilities included UI/UX design and technical implementation.',
 			},
 			spaceio: {
 				title: 'Space Io',
-				description: 'Real-time multiplayer game with a Node.js authoritative server (30 Hz tick rate) and Phaser 3 client. TypeScript monorepo, Socket.IO networking, client-side prediction. Led design and development in a team of 4.',
+				description: 'Real-time multiplayer game with a Node.js-based server and Phaser 3 game engine. TypeScript monorepo, Socket.IO networking, client-side prediction. Led design and development in a team of 4.',
 			},
 			lunch: {
 				title: 'Campus Lunch Display',
-				description: 'Vue.js app showing real-time lunch menus to students, deployed to multiple Raspberry Pi devices across campus. Maintained the backend database and added SQLite for data analysis.',
+				description: 'Vue.js app showing real-time lunch menus to students. Deployed to multiple Raspberry Pi devices across campus. Automatically fetches menus from restaurant APIs and by parsing HTML structures. Collects data on food options.',
 			},
 			recipe: {
 				title: 'Recipe App',
-				description: 'Team project featuring authentication, CRUD operations, search functionality, and reviews.',
+				description: 'University software engineering course project. A food recipe app featuring authentication, CRUD operations, search functionality, and reviews. I learned to utilize cloud-based content management effectively in web development.',
 			},
 			homelab: {
 				title: 'Homelab Infrastructure',
-				description: 'Self-built Linux server hardware and software. Automated setup with Ansible; configured networking, security, and multiple services. Hosted a community game server for about 20 active users.',
+				description: 'Self-built Linux server hardware and software. I learned e.g., automated deployment with Ansible, network and security configuration. Maintained a game server for a student community with about 20 active users.',
 			},
 			portfolio: {
 				title: 'Web Portfolio',
-				description: 'This very site! Built with Astro and Tailwind CSS. Bilingual, responsive bento grid layout.',
+				description: 'This very site! Built with Astro and Tailwind CSS.',
 			},
 		},
 		techCategories: {

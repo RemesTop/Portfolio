@@ -5,6 +5,8 @@ import ProjectCard from '../components/ProjectCard.astro';
 import profilePic from '../assets/Topias-R.jpg';
 import serveriLogo from '../assets/Serveri_logo_musta_valkoinentausta(3).svg';
 import uefLogo from '../assets/University_of_Eastern_Finland_logo.svg';
+import spaceioImg from '../assets/Projects/Spaceio.png';
+import uiresearchImg from '../assets/Projects/uiresearch.png';
 import { translations } from '../i18n';
 
 const fi = translations.fi;
@@ -27,7 +29,9 @@ const techIcons: Record<string, string> = {
 	'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
 	'CI/CD': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg',
 	'Azure': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg',
-	'Astro': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg'
+	'Astro': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg',
+	'Suomi': 'https://flagcdn.com/fi.svg',
+	'Englanti': 'https://flagcdn.com/gb.svg'
 };
 ---
 
@@ -52,7 +56,7 @@ const techIcons: Record<string, string> = {
 			class="rounded-full ring-2 ring-zinc-700 object-cover shrink-0"
 		/>
 		<div class="text-center sm:text-left">
-			<h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2">
+			<h1 class="text-3xl md:text-4xl font-bold text-white tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]">
 				Topias Remes
 			</h1>
 			<p data-lang="en" class="text-lg text-zinc-400 mb-4 hidden">
@@ -104,8 +108,8 @@ const techIcons: Record<string, string> = {
 	<section class="mb-16">
 		<h2 data-lang="en" class="text-xl font-semibold text-white mb-6 tracking-tight hidden">{en.aboutHeading}</h2>
 		<h2 data-lang="fi" class="text-xl font-semibold text-white mb-6 tracking-tight">{fi.aboutHeading}</h2>
-		<p data-lang="en" class="text-zinc-300 leading-relaxed whitespace-pre-wrap hidden">{en.about}</p>
-		<p data-lang="fi" class="text-zinc-300 leading-relaxed whitespace-pre-wrap">{fi.about}</p>
+		<p data-lang="en" class="text-zinc-400 leading-relaxed max-w-3xl whitespace-pre-wrap hidden">{en.about}</p>
+		<p data-lang="fi" class="text-zinc-400 leading-relaxed max-w-3xl whitespace-pre-wrap">{fi.about}</p>
 	</section>
 
 	<!-- ═══════════════════ TECHNOLOGIES ═══════════════════ -->
@@ -118,10 +122,22 @@ const techIcons: Record<string, string> = {
 				<p data-lang="en" class="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-3 hidden">{en.techCategories.languages}</p>
 				<p data-lang="fi" class="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-3">{fi.techCategories.languages}</p>
 				<div class="flex flex-wrap gap-2.5">
-					{['TypeScript', 'JavaScript', 'Python', 'Java', 'C#', 'Kotlin', 'SQL'].map((t) => (
+					{['TypeScript', 'JavaScript', 'Python', 'Java', 'C#', 'Kotlin', 'SQL', 'Suomi', 'Englanti'].map((t) => (
 						<span class="tech-badge text-sm flex items-center gap-2 py-1.5 px-3">
-							<img src={techIcons[t]} alt={t} class="w-4 h-4 object-contain" />
-							{t}
+							{techIcons[t] && <img src={techIcons[t]} alt={t} class="w-4 h-4 object-contain rounded-sm" />}
+							{t === 'Suomi' ? (
+								<>
+									<span data-lang="fi">Suomi</span>
+									<span data-lang="en" class="hidden">Finnish</span>
+								</>
+							) : t === 'Englanti' ? (
+								<>
+									<span data-lang="fi">Englanti</span>
+									<span data-lang="en" class="hidden">English</span>
+								</>
+							) : (
+								t
+							)}
 						</span>
 					))}
 				</div>
@@ -161,27 +177,32 @@ const techIcons: Record<string, string> = {
 		<div class="bento-grid">
 			<!-- UI Research App -->
 			<ProjectCard
-				title={en.projects.uiresearch.title}
+				titleEn={en.projects.uiresearch.title}
+				titleFi={fi.projects.uiresearch.title}
 				descriptionEn={en.projects.uiresearch.description}
 				descriptionFi={fi.projects.uiresearch.description}
-				tech={['Next.js', 'React', 'TypeScript', 'LLM Integration']}
+				tech={['Next.js', 'React', 'TypeScript', 'UI/UX Design']}
 				repoUrl="https://github.com/RemesTop/UI-ResearchApp"
+				image={uiresearchImg}
 				gridArea="uiresearch"
 			/>
 
 			<!-- Space Io -->
 			<ProjectCard
-				title={en.projects.spaceio.title}
+				titleEn={en.projects.spaceio.title}
+				titleFi={fi.projects.spaceio.title}
 				descriptionEn={en.projects.spaceio.description}
 				descriptionFi={fi.projects.spaceio.description}
 				tech={['TypeScript', 'Node.js', 'Socket.IO', 'Phaser 3']}
 				repoUrl="https://github.com/Jeb4dev/space-io"
+				image={spaceioImg}
 				gridArea="spaceio"
 			/>
 
 			<!-- Campus Lunch Display -->
 			<ProjectCard
-				title={en.projects.lunch.title}
+				titleEn={en.projects.lunch.title}
+				titleFi={fi.projects.lunch.title}
 				descriptionEn={en.projects.lunch.description}
 				descriptionFi={fi.projects.lunch.description}
 				tech={['Vue.js', 'SQLite', 'Raspberry Pi']}
@@ -191,7 +212,8 @@ const techIcons: Record<string, string> = {
 
 			<!-- Recipe App -->
 			<ProjectCard
-				title={en.projects.recipe.title}
+				titleEn={en.projects.recipe.title}
+				titleFi={fi.projects.recipe.title}
 				descriptionEn={en.projects.recipe.description}
 				descriptionFi={fi.projects.recipe.description}
 				tech={['Next.js', 'DatoCMS', 'Tailwind CSS']}
@@ -201,7 +223,8 @@ const techIcons: Record<string, string> = {
 
 			<!-- Homelab Infrastructure -->
 			<ProjectCard
-				title={en.projects.homelab.title}
+				titleEn={en.projects.homelab.title}
+				titleFi={fi.projects.homelab.title}
 				descriptionEn={en.projects.homelab.description}
 				descriptionFi={fi.projects.homelab.description}
 				tech={['Linux', 'Ansible', 'Docker', 'Networking']}
@@ -210,7 +233,8 @@ const techIcons: Record<string, string> = {
 
 			<!-- Web Portfolio -->
 			<ProjectCard
-				title={en.projects.portfolio.title}
+				titleEn={en.projects.portfolio.title}
+				titleFi={fi.projects.portfolio.title}
 				descriptionEn={en.projects.portfolio.description}
 				descriptionFi={fi.projects.portfolio.description}
 				tech={['Astro', 'Tailwind CSS', 'TypeScript']}
