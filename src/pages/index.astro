@@ -102,32 +102,10 @@ const techIcons: Record<string, string> = {
 
 	<!-- ═══════════════════ ABOUT ═══════════════════ -->
 	<section class="mb-16">
-		<div class="font-mono text-sm sm:text-base text-zinc-300 overflow-x-auto">
-			<div data-lang="fi">
-				<div class="flex flex-col gap-3">
-					<p><span class="text-zinc-500">nimi</span> <span class="text-zinc-600">=</span> <span class="text-white">"Topias"</span></p>
-					<p><span class="text-zinc-500">koulutustaso</span> <span class="text-zinc-600">=</span> <span class="text-white">"TKT Kandidaatti"</span></p>
-					<p><span class="text-zinc-500">valmiina_työmahdollisuuksiin</span> <span class="text-zinc-600">=</span> <span class="text-white">True</span></p>
-					<div class="flex flex-col gap-1.5 mt-2">
-						<p><span class="text-zinc-500">kuvaus</span> <span class="text-zinc-600">=</span> <span class="text-zinc-500">"""</span></p>
-						<p class="text-zinc-200 leading-relaxed whitespace-pre-wrap">{fi.about}</p>
-						<p class="text-zinc-500">"""</p>
-					</div>
-				</div>
-			</div>
-			<div data-lang="en" class="hidden">
-				<div class="flex flex-col gap-3">
-					<p><span class="text-zinc-500">name</span> <span class="text-zinc-600">=</span> <span class="text-white">"Topias"</span></p>
-					<p><span class="text-zinc-500">education_level</span> <span class="text-zinc-600">=</span> <span class="text-white">"BSc Computer Science"</span></p>
-					<p><span class="text-zinc-500">open_for_work</span> <span class="text-zinc-600">=</span> <span class="text-white">True</span></p>
-					<div class="flex flex-col gap-1.5 mt-2">
-						<p><span class="text-zinc-500">description</span> <span class="text-zinc-600">=</span> <span class="text-zinc-500">"""</span></p>
-						<p class="text-zinc-200 leading-relaxed whitespace-pre-wrap">{en.about}</p>
-						<p class="text-zinc-500">"""</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<h2 data-lang="en" class="text-xl font-semibold text-white mb-6 tracking-tight hidden">{en.aboutHeading}</h2>
+		<h2 data-lang="fi" class="text-xl font-semibold text-white mb-6 tracking-tight">{fi.aboutHeading}</h2>
+		<p data-lang="en" class="text-zinc-300 leading-relaxed whitespace-pre-wrap hidden">{en.about}</p>
+		<p data-lang="fi" class="text-zinc-300 leading-relaxed whitespace-pre-wrap">{fi.about}</p>
 	</section>
 
 	<!-- ═══════════════════ TECHNOLOGIES ═══════════════════ -->
@@ -181,67 +159,61 @@ const techIcons: Record<string, string> = {
 		<h2 data-lang="fi" class="text-xl font-semibold text-white mb-6 tracking-tight">{fi.projectsHeading}</h2>
 
 		<div class="bento-grid">
-			<!-- UI Research App (large) -->
+			<!-- UI Research App -->
 			<ProjectCard
 				title={en.projects.uiresearch.title}
 				descriptionEn={en.projects.uiresearch.description}
 				descriptionFi={fi.projects.uiresearch.description}
 				tech={['Next.js', 'React', 'TypeScript', 'LLM Integration']}
 				repoUrl="https://github.com/RemesTop/UI-ResearchApp"
-				size="large"
 				gridArea="uiresearch"
 			/>
 
-			<!-- Space Io (large) -->
+			<!-- Space Io -->
 			<ProjectCard
 				title={en.projects.spaceio.title}
 				descriptionEn={en.projects.spaceio.description}
 				descriptionFi={fi.projects.spaceio.description}
 				tech={['TypeScript', 'Node.js', 'Socket.IO', 'Phaser 3']}
 				repoUrl="https://github.com/Jeb4dev/space-io"
-				size="large"
 				gridArea="spaceio"
 			/>
 
-			<!-- Campus Lunch Display (small) -->
+			<!-- Campus Lunch Display -->
 			<ProjectCard
 				title={en.projects.lunch.title}
 				descriptionEn={en.projects.lunch.description}
 				descriptionFi={fi.projects.lunch.description}
 				tech={['Vue.js', 'SQLite', 'Raspberry Pi']}
 				repoUrl="https://github.com/serveri/ruoka_infotaulu"
-				size="small"
 				gridArea="lunch"
 			/>
 
-			<!-- Recipe App (small) -->
+			<!-- Recipe App -->
 			<ProjectCard
 				title={en.projects.recipe.title}
 				descriptionEn={en.projects.recipe.description}
 				descriptionFi={fi.projects.recipe.description}
 				tech={['Next.js', 'DatoCMS', 'Tailwind CSS']}
 				repoUrl="https://github.com/Jeb4dev/recipeapp"
-				size="small"
 				gridArea="recipe"
 			/>
 
-			<!-- Homelab Infrastructure (small) -->
+			<!-- Homelab Infrastructure -->
 			<ProjectCard
 				title={en.projects.homelab.title}
 				descriptionEn={en.projects.homelab.description}
 				descriptionFi={fi.projects.homelab.description}
 				tech={['Linux', 'Ansible', 'Docker', 'Networking']}
-				size="small"
 				gridArea="homelab"
 			/>
 
-			<!-- Web Portfolio (small) -->
+			<!-- Web Portfolio -->
 			<ProjectCard
 				title={en.projects.portfolio.title}
 				descriptionEn={en.projects.portfolio.description}
 				descriptionFi={fi.projects.portfolio.description}
 				tech={['Astro', 'Tailwind CSS', 'TypeScript']}
-				size="small"
 				gridArea="portfolio"
 			/>
 		</div>
