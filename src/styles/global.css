@@ -50,17 +50,20 @@
 /* ── Project image blur ── */
 .project-img {
   filter: blur(1px);
-  transition: filter 0.7s ease, transform 0.7s ease;
 }
 
-/* Desktop: remove blur on card hover */
-.group:hover .project-img {
-  filter: blur(0);
+/* Desktop (mouse): remove blur on card hover */
+@media (hover: hover) {
+  .group:hover .project-img {
+    filter: blur(0);
+  }
 }
 
-/* Mobile: remove blur when card scrolls into view */
-.project-img.in-view {
-  filter: blur(0);
+/* Mobile (touch): remove blur when card scrolls into view */
+@media (hover: none) {
+  .project-img.in-view {
+    filter: blur(0);
+  }
 }
 
 /* ── Tech badge ── */
