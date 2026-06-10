@@ -14,6 +14,7 @@ export const translations = {
 		ctaButton: 'Verkostoidu LinkedInissä',
 		ctaEmailButton: 'Kopioi sähköposti',
 		ctaEmailCopied: 'Kopioitu!',
+		emailText: 'Sähköposti',
 		educationHeading: 'Koulutus',
 		education: [
 			{
@@ -102,6 +103,7 @@ export const translations = {
 		ctaButton: 'Connect on LinkedIn',
 		ctaEmailButton: 'Copy email',
 		ctaEmailCopied: 'Copied!',
+		emailText: 'Email',
 		educationHeading: 'Education',
 		education: [
 			{

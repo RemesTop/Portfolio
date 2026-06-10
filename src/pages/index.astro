@@ -95,7 +95,7 @@ const techIcons: Record<string, string> = {
 				<button
 					type="button"
 					id="email-copy-header"
-					class="text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer"
+					class="text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer relative"
 					title="Copy email"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -103,7 +103,14 @@ const techIcons: Record<string, string> = {
 						<rect width="20" height="16" x="2" y="4" rx="2" />
 						<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
 					</svg>
-					<span id="email-copy-header-text">topiasre@gmail.com</span>
+					<span id="email-copy-header-text">
+						<span data-lang="fi">{fi.emailText}</span>
+						<span data-lang="en" class="hidden">{en.emailText}</span>
+					</span>
+					<div id="email-tooltip" class="tooltip">
+						<span data-lang="fi">{fi.ctaEmailCopied}</span>
+						<span data-lang="en" class="hidden">{en.ctaEmailCopied}</span>
+					</div>
 				</button>
 			</div>
 	</header>
@@ -363,9 +370,8 @@ const techIcons: Record<string, string> = {
 				<span data-lang="en" class="hidden">{en.ctaButton}</span>
 				<span data-lang="fi">{fi.ctaButton}</span>
 			</a>
-			<button
-				type="button"
-				id="email-copy-cta"
+			<a
+				id="email-cta-link"
 				class="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-transparent text-zinc-300 px-6 py-2.5 text-sm font-semibold hover:border-zinc-500 hover:text-white transition-colors cursor-pointer mt-4 sm:mt-0 sm:ml-4"
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
@@ -373,8 +379,11 @@ const techIcons: Record<string, string> = {
 					<rect width="20" height="16" x="2" y="4" rx="2" />
 					<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
 				</svg>
-				<span id="email-copy-cta-text">topiasre@gmail.com</span>
-			</button>
+				<span id="email-cta-text">
+					<span data-lang="fi">{fi.emailText}</span>
+					<span data-lang="en" class="hidden">{en.emailText}</span>
+				</span>
+			</a>
 		</div>
 	</section>
 
@@ -431,24 +440,48 @@ const techIcons: Record<string, string> = {
 	// Also run after Astro view transitions (if any)
 	document.addEventListener('astro:after-swap', initLang);
 
-	// Email copy-to-clipboard
-	function copyEmail(buttonId: string, textId: string) {
-		const btn = document.getElementById(buttonId);
-		const textEl = document.getElementById(textId);
-		if (!btn || !textEl) return;
+	// Email obfuscation & copy logic
+	function initEmail() {
+		// Base64 encoded email to protect from scrapers
+		const encoded = 'dG9waWFzcmVtZXNAb3V0bG9vay5jb20=';
+		const getEmail = () => atob(encoded);
 
-		btn.addEventListener('click', async () => {
-			await navigator.clipboard.writeText('topiasre@gmail.com');
-			const lang = localStorage.getItem('portfolio-lang') || 'fi';
-			const copiedText = lang === 'fi' ? 'Kopioitu!' : 'Copied!';
-			const original = textEl.textContent;
-			textEl.textContent = copiedText;
-			setTimeout(() => { textEl.textContent = original; }, 2000);
-		});
+		// Top Header Button
+		const headerBtn = document.getElementById('email-copy-header');
+		const headerText = document.getElementById('email-copy-header-text');
+		const tooltip = document.getElementById('email-tooltip');
+		
+		if (headerBtn && headerText && tooltip) {
+			headerBtn.addEventListener('click', async () => {
+				const email = getEmail();
+				await navigator.clipboard.writeText(email);
+				
+				// Reveal email in place of "Email" text
+				headerText.innerHTML = email;
+				
+				// Show tooltip
+				tooltip.classList.add('show');
+				setTimeout(() => {
+					tooltip.classList.remove('show');
+				}, 2000);
+			});
+		}
+
+		// Bottom CTA link
+		const ctaLink = document.getElementById('email-cta-link');
+		if (ctaLink) {
+			const setMailto = () => {
+				if (!ctaLink.getAttribute('href')) {
+					ctaLink.setAttribute('href', `mailto:${getEmail()}`);
+				}
+			};
+			// Add href dynamically on interaction to avoid initial DOM parsers
+			ctaLink.addEventListener('mouseover', setMailto);
+			ctaLink.addEventListener('touchstart', setMailto, { passive: true });
+			ctaLink.addEventListener('click', setMailto);
+		}
 	}
-
-	copyEmail('email-copy-header', 'email-copy-header-text');
-	copyEmail('email-copy-cta', 'email-copy-cta-text');
+	initEmail();
 
 	// Mobile: unblur project images when they scroll into view (top 75% of viewport)
 	function initBlurObserver() {
