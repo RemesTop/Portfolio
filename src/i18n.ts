@@ -40,7 +40,7 @@ export const translations = {
 				date: 'Tammi 2026 \u2013 nykyhetki',
 				title: 'Järjestelmäylläpitäjä',
 				company: 'Serveri ry',
-				description: 'Ylläpidän ja kehitän opiskelijajärjestön verkkosivustoa, pilvipalveluja ja muita IT-järjestelmiä. Johdan vapaaehtoisista koostuvaa järjestelmätiimiä ja annan IT-tukea.',
+				description: 'Ylläpidän ja kehitän opiskelijajärjestön verkkosivustoa, pilvipalveluja ja muita IT-järjestelmiä. Johdan vapaaehtoisista koostuvaa järjestelmätoimikuntaa ja annan IT-tukea opiskelijoille tarvittaessa.',
 			},
 			{
 				date: 'Elo 2025 \u2013 Joulu 2025',
@@ -66,7 +66,7 @@ export const translations = {
 			},
 			lunch: {
 				title: 'Kampuksen Lounasnäyttö',
-				description: 'Vue.js-sovellus, joka näyttää reaaliaikaisia lounaslistoja opiskelijoille. Käytössä useilla Raspberry Pi -laitteilla kampuksella. Hakee ruokalistat automaattisesti ravintolojen API-rajapinnoista ja sivujen html-rakenteista parsimalla. Kerää dataa ruokavaihtoehdoista',
+				description: 'Vue.js-sovellus, joka näyttää reaaliaikaisia lounaslistoja opiskelijoille. Käytössä useilla Raspberry Pi -laitteilla kampuksella. Hakee ruokalistat automaattisesti ravintolojen API-rajapinnoista ja sivujen html-rakenteista parsimalla. Kerää dataa kampuksen ruokavaihtoehdoista.',
 			},
 			recipe: {
 				title: 'Reseptisovellus',
@@ -128,7 +128,7 @@ export const translations = {
 				date: 'Jan 2026 \u2013 present',
 				title: 'System Administrator',
 				company: 'Serveri ry',
-				description: 'Maintain and develop the student organization website, cloud services, and other IT systems. Lead the volunteer system committee and provide IT support.',
+				description: 'Maintain and develop the student organization website, cloud services, and other IT systems. Lead the volunteer system committee and provide IT support when needed.',
 			},
 			{
 				date: 'Aug 2025 \u2013 Dec 2025',
@@ -154,7 +154,7 @@ export const translations = {
 			},
 			lunch: {
 				title: 'Campus Lunch Display',
-				description: 'Vue.js app showing real-time lunch menus to students. Deployed to multiple Raspberry Pi devices across campus. Automatically fetches menus from restaurant APIs and by parsing HTML structures. Collects data on food options.',
+				description: 'Vue.js app showing real-time lunch menus to students. Deployed to multiple Raspberry Pi devices across campus. Automatically fetches menus from restaurant APIs and by parsing HTML structures. Collects data on campus food options.',
 			},
 			recipe: {
 				title: 'Recipe App',

@@ -7,6 +7,10 @@ import serveriLogo from '../assets/Serveri_logo_musta_valkoinentausta(3).svg';
 import uefLogo from '../assets/University_of_Eastern_Finland_logo.svg';
 import spaceioImg from '../assets/Projects/Spaceio.png';
 import uiresearchImg from '../assets/Projects/uiresearch.png';
+import homelabImg from '../assets/Projects/homelab.png';
+import lunchImg from '../assets/Projects/lunchscreen.jpg';
+import portfolioImg from '../assets/Projects/portfolio.png';
+import recipeImg from '../assets/Projects/recipeapp.png';
 import { translations } from '../i18n';
 
 const fi = translations.fi;
@@ -183,6 +187,7 @@ const techIcons: Record<string, string> = {
 				descriptionFi={fi.projects.uiresearch.description}
 				tech={['Next.js', 'React', 'TypeScript', 'UI/UX Design']}
 				repoUrl="https://github.com/RemesTop/UI-ResearchApp"
+				liveUrl="https://web-tutkimus.vercel.app/"
 				image={uiresearchImg}
 				gridArea="uiresearch"
 			/>
@@ -207,6 +212,8 @@ const techIcons: Record<string, string> = {
 				descriptionFi={fi.projects.lunch.description}
 				tech={['Vue.js', 'SQLite', 'Raspberry Pi']}
 				repoUrl="https://github.com/serveri/ruoka_infotaulu"
+				liveUrl="https://lunch.serveriry.fi/"
+				image={lunchImg}
 				gridArea="lunch"
 			/>
 
@@ -218,6 +225,7 @@ const techIcons: Record<string, string> = {
 				descriptionFi={fi.projects.recipe.description}
 				tech={['Next.js', 'DatoCMS', 'Tailwind CSS']}
 				repoUrl="https://github.com/Jeb4dev/recipeapp"
+				image={recipeImg}
 				gridArea="recipe"
 			/>
 
@@ -228,6 +236,7 @@ const techIcons: Record<string, string> = {
 				descriptionEn={en.projects.homelab.description}
 				descriptionFi={fi.projects.homelab.description}
 				tech={['Linux', 'Ansible', 'Docker', 'Networking']}
+				image={homelabImg}
 				gridArea="homelab"
 			/>
 
@@ -238,6 +247,8 @@ const techIcons: Record<string, string> = {
 				descriptionEn={en.projects.portfolio.description}
 				descriptionFi={fi.projects.portfolio.description}
 				tech={['Astro', 'Tailwind CSS', 'TypeScript']}
+				repoUrl="https://github.com/RemesTop/Portfolio"
+				image={portfolioImg}
 				gridArea="portfolio"
 			/>
 		</div>
@@ -247,11 +258,11 @@ const techIcons: Record<string, string> = {
 	<section class="mb-16">
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			<!-- Experience -->
-			<div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+			<div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8 flex flex-col h-full">
 				<h2 data-lang="en" class="text-xl sm:text-2xl font-bold text-white mb-8 tracking-tight hidden">{en.experienceHeading}</h2>
 				<h2 data-lang="fi" class="text-xl sm:text-2xl font-bold text-white mb-8 tracking-tight">{fi.experienceHeading}</h2>
 
-				<div class="relative border-l border-zinc-800 ml-4 space-y-10">
+				<div class="relative border-l border-zinc-800 ml-4 space-y-10 flex-1">
 					{en.experience.map((exp, i) => (
 						<div class="relative pl-8">
 							{exp.company === 'Serveri ry' ? (
@@ -292,11 +303,11 @@ const techIcons: Record<string, string> = {
 			</div>
 
 			<!-- Education -->
-			<div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8">
+			<div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8 flex flex-col h-full">
 				<h2 data-lang="en" class="text-xl sm:text-2xl font-bold text-white mb-8 tracking-tight hidden">{en.educationHeading}</h2>
 				<h2 data-lang="fi" class="text-xl sm:text-2xl font-bold text-white mb-8 tracking-tight">{fi.educationHeading}</h2>
 
-				<div class="relative border-l border-zinc-800 ml-4 space-y-10">
+				<div class="relative border-l border-zinc-800 ml-4 space-y-10 flex-1">
 					{en.education.map((edu, i) => (
 						<div class="relative pl-8">
 							{edu.school.includes('Itä-Suomen yliopisto') || edu.school.includes('University of Eastern Finland') ? (
