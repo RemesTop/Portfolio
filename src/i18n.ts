@@ -58,8 +58,8 @@ export const translations = {
 		],
 		projects: {
 			uiresearch: {
-				title: 'UI Research App',
-				description: 'Maisterikurssilla tiimiprojektina tuotettu Next.js-verkkosovellus monivaiheisiin käyttöliittymätutkimuksiin. Sisältää A/B-testauksen tilanhallinnan ja monikielisyyden. Optimoitu mobiilille ja pöytäkoneille. Vastuualueenani oli UI/UX-suunnittelu ja tekninen toteutus.',
+				title: 'UI/UX Research App',
+				description: 'Maisterikurssilla tiimiprojektina tuotettu Next.js-verkkosovellus monivaiheisiin käyttöliittymätutkimuksiin. Kysely integroitu iframella. Sisältää A/B-testauksen tilanhallinnan ja monikielisyyden. Optimoitu mobiilille ja pöytäkoneille. Vastuualueenani oli UI/UX-suunnittelu ja tekninen toteutus.',
 			},
 			spaceio: {
 				title: 'Space Io',
@@ -147,8 +147,8 @@ export const translations = {
 		],
 		projects: {
 			uiresearch: {
-				title: 'UI Research App',
-				description: 'A Next.js web application produced as a team project for a Master\'s course for multi-stage user interface studies. Includes A/B testing state management and multilingualism. Optimized for mobile and desktop. My responsibilities included UI/UX design and technical implementation.',
+				title: 'UI/UX Research App',
+				description: 'A Next.js web application produced as a team project for a Master\'s course for multi-stage user interface studies. Survey integrated via iframe Includes A/B testing state management and multilingualism. Optimized for mobile and desktop. My responsibilities included UI/UX design and technical implementation.',
 			},
 			spaceio: {
 				title: 'Space Io',
