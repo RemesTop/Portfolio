@@ -10,6 +10,8 @@ interface Props {
 	tech: string[];
 	repoUrl?: string;
 	liveUrl?: string;
+	liveUrlTextFi?: string;
+	liveUrlTextEn?: string;
 	gridArea?: string;
 	image?: ImageMetadata;
 }
@@ -22,6 +24,8 @@ const {
 	tech,
 	repoUrl,
 	liveUrl,
+	liveUrlTextFi = 'Linkki',
+	liveUrlTextEn = 'View',
 	gridArea,
 	image,
 } = Astro.props;
@@ -91,8 +95,8 @@ const {
 							class="flex items-center gap-1.5 text-xs font-medium text-zinc-300 hover:text-white transition-colors bg-zinc-800/80 hover:bg-zinc-700 px-2.5 py-1.5 rounded border border-zinc-700"
 							aria-label={`${titleEn} live demo`}
 						>
-							<span data-lang="fi">Linkki</span>
-							<span data-lang="en" class="hidden">View</span>
+							<span data-lang="fi">{liveUrlTextFi}</span>
+							<span data-lang="en" class="hidden">{liveUrlTextEn}</span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
 								 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 								<path d="M15 3h6v6" />

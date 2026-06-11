@@ -79,7 +79,7 @@ export const translations = {
 			},
 			portfolio: {
 				title: 'Web-portfolio',
-				description: 'Tämä sivusto! Rakennettu Astrolla ja Tailwind CSS:llä.',
+				description: 'Tämä sivusto! Rakennettu Astrolla ja Tailwind CSS:llä. Sisältää client side yksinpeliksi muokatun version SpaceIo pelistä',
 			},
 		},
 		techCategories: {
@@ -168,7 +168,7 @@ export const translations = {
 			},
 			portfolio: {
 				title: 'Web Portfolio',
-				description: 'This very site! Built with Astro and Tailwind CSS.',
+				description: 'This very site! Built with Astro and Tailwind CSS. Includes client-side single-player version of SpaceIo.',
 			},
 		},
 		techCategories: {
